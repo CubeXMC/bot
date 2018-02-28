@@ -22,8 +22,6 @@ bot.on('message', message => {
     message.channel.send({embed});
   }
   
-  if(command === 'prune') {
-  message.channel.bulkdelete(100)
 });
 
 
