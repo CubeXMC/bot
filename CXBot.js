@@ -23,13 +23,13 @@ bot.on('message', message => {
   }
   
  const warns = member.guild.channels.find('name' , 'warns')
- bot.channels.get(warns.id).send();
+ bot.channels.get(warns.id).send('User Warned: ${member}');
 
-if(!message.guild.member(message.author).hasPermission('MANAGE_SERVER') {
+if(!message.author.hasPermission('MANAGE_SERVER') {
   return;
 } else { if (command === 'warn') {
   let member = message.mentions.members.first();
-  message.warns('```User Warned: ${member}```');
+  message.warns
   message.channel.send('```User Warned: ${member}```');
 }} else return;
 });
