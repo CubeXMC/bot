@@ -27,11 +27,11 @@ bot.on('message', message => {
 
 if(!message.guild.member(message.author).hasPermission('MANAGE_SERVER') {
   return;
-} else if (command === 'warn') {
+} else { if (command === 'warn') {
   let member = message.mentions.members.first();
   message.warns('```User Warned: ${member}```');
   message.channel.send('```User Warned: ${member}```');
-} else return;
+}} else return;
 });
 
 
