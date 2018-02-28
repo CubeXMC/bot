@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const config = require("./config.json");
 
-let guild = message.guild
 
 bot.on("ready", () => {
 console.log('I am ready...');
@@ -14,6 +13,7 @@ bot.on('message', message => {
 
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
+  let guild = message.guild
   const embed = new Discord.RichEmbed();
 
   if (command === 'ping') {
