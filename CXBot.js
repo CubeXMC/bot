@@ -17,6 +17,12 @@ bot.on('message', message => {
 
   if (command === 'ping') {
     message.channel.send('pong');
+    
+  if(command === 'kick') {
+  let member = message.mentions.members.first();
+  let reason = args.slice(1).join(" ");
+  member.kick(reason);
+}
   }
 });
 
