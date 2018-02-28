@@ -14,9 +14,12 @@ bot.on('message', message => {
 
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
+  const embed = new Discord.RichEmbed();
 
   if (command === 'ping') {
-    message.channel.send('pong');
+    embed.setColor("BLUE")
+    embed.setDescription("PONG!\n" + Math.round(bot.ping) + "ms")
+    message.channel.send({embed});
     
   }
 });
