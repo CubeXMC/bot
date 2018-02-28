@@ -1,1 +1,1 @@
-worker: node CXbot.js
+worker: node CXBot.js
