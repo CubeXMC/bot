@@ -22,16 +22,6 @@ bot.on('message', message => {
     message.channel.send({embed});
   }
   
- const warns = member.guild.channels.find('name' , 'warns')
- bot.channels.get(warns.id).send('User Warned: ${member}');
-
-if(!message.author.hasPermission('MANAGE_SERVER') {
-  return;
-} else { if (command === 'warn') {
-  let member = message.mentions.members.first();
-  message.warns
-  message.channel.send('```User Warned: ${member}```');
-}} else return;
 });
 
 
