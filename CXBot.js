@@ -16,8 +16,8 @@ bot.on('message', message => {
   const embed = new Discord.RichEmbed();
 
   if (message.content.toLowerCase() === (prefix) + 'ping') {
-    embed.setColor("BLUE")
-    embed.setDescription("PONG!\n" + Math.round(bot.ping) + "ms")
+    embed.setColor("BLUE");
+    embed.setDescription("PONG!\n" + Math.round(bot.ping) + "ms");
     message.channel.send({embed});
   }
   
