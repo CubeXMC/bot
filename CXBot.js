@@ -11,7 +11,7 @@ bot.user.setActivity("On CubeXNetwork",{type:"PLAYING"});
 bot.on('message', message => {
   if (message.author.bot) return;
 
-  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+  const args = message.content.slice(config.prefix).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   let guild = message.guild
   const embed = new Discord.RichEmbed();
