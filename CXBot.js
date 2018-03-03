@@ -11,7 +11,6 @@ bot.user.setActivity("On CubeXNetwork",{type:"PLAYING"});
 
 bot.on('message', message => {
   if (message.author.bot) return;
-
   let guild = message.guild
   var embed = new Discord.RichEmbed();
 
