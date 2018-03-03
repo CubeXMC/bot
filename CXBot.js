@@ -28,18 +28,6 @@ bot.on('message', message => {
   
 });
 
-client.on('message', message => {
-var embed = new Discord.RichEmbed()
-    if (message.content === ',serverinfo'){
-embed.setThumbnail(message.guild.iconURL)
-embed.addField('Server Name', message.guild.name)
-embed.addField('Member Count', message.guild.members.size)
-embed.setColor(3447003) 
-embed.addField('server Owner', message.guild.owner)
-embed.addField('Server Creation Date', message.guild.createdAt)
-message.channel.send({embed});
-}});
-
 
 
 bot.login(config.token);
