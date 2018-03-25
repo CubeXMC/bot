@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const config = require("./config.json");
-const fs = require('fs');
 
 const prefix = 'cx:'
 
@@ -25,14 +24,6 @@ bot.on('message', message => {
     embed.setDescription('')
     message.channel.send({embed});
   }
-  
-  if (message.content.toLowerCase().startsWith('test') {
-      config.prefix = boom;
-      
-      fs.writeFile("./config.json", JSON.stringify(config), (err) => {
-        if (err) console.error(err)
-    });
-      }
   
 });
 
