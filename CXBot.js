@@ -26,10 +26,10 @@ bot.on('message', message => {
     embed.setDescription('')
     message.channel.send({embed});
   }
-  if(message.content.toLowerCase() === prefix + `eval`) {
+ if(message.content.toLowerCase() === prefix + `eval`) {
  let guild = message.guild
   var embed = new Discord.RichEmbed();
-  if(message.author.id !== botconfig.BradID && message.author.id !== botconfig.TMGID) return;
+  if(message.author.id !== `335893092756488205`) return;
   try {
   const code = args.join(" ");
   let evaled = eval(code);
