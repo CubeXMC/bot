@@ -26,28 +26,38 @@ bot.on('message', message => {
     embed.setDescription('')
     message.channel.send({embed});
   }
- if(message.content.toLowerCase() === prefix + `eval`) {
- let guild = message.guild
-  var embed = new Discord.RichEmbed();
-  if(message.author.id !== `335893092756488205`) return;
-  try {
-  const code = args.join(" ");
-  let evaled = eval(code);
-  if (typeof evaled !== "string")
-  evaled = require("util").inspect(evaled);
-  embed.setDescription(evaled, {code:"xl"});
-	embed.setAuthor("Eval", message.author.displayAvatarURL)
-	embed.setColor("#1196F4")
-  message.channel.send({embed});
-  } catch (err) {
-	embed.setAuthor("Error", message.author.displayAvatarURL)
-  embed.setDescription(`\`ERROR\` \`\`\`xl\n${err}\n\`\`\``);
-	embed.setColor("#FF0000")
-  message.channel.send({embed});
-  }}
+
     
 });
 
+bot.on('message', async message => { 
+    let guild = message.guild
+    var embed = new Discord.RichEmbed();
+
+    
+        const args = message.content.split(" ").slice(1);
+      
+        if (message.content.startsWith(prefix + "eval")) {
+          if(message.author.id !== "335893092756488205") return;
+          try {
+            const code = args.join(" ");
+            let evaled = eval(code);
+      
+            if (typeof evaled !== "string")
+              evaled = require("util").inspect(evaled);
+            embed.setDescription(evaled, {code:"xl"});
+	    embed.setAuthor("Eval", message.author.displayAvatarURL)
+	    embed.setColor("#1196F4")
+            message.channel.send({embed});
+          } catch (err) {
+	   embed.setAuthor("Error", message.author.displayAvatarURL)
+           embed.setDescription(`\`ERROR\` \`\`\`xl\n${err}\n\`\`\``);
+	   embed.setColor("#FF0000")
+           message.channel.send({embed});
+
+          }
+        }
+      });
 
 
 bot.login(process.env.TOKEN);
