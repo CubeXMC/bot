@@ -44,7 +44,7 @@ bot.on('message', message => {
   embed.setDescription(`\`ERROR\` \`\`\`xl\n${err}\n\`\`\``);
 	embed.setColor("#FF0000")
   message.channel.send({embed});
-  }
+  }}
     
 });
 
