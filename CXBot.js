@@ -13,7 +13,7 @@ bot.on('message', message => {
   if (message.author.bot) return;
   let guild = message.guild
   var embed = new Discord.RichEmbed();
-  let args = message.content.split(" ").slice(1);
+  let args = message.content.split(" ")
 
 
   if (message.content.toLowerCase() === prefix + 'ping') {
