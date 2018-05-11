@@ -13,6 +13,8 @@ bot.on('message', message => {
   if (message.author.bot) return;
   let guild = message.guild
   var embed = new Discord.RichEmbed();
+  let args = message.content.split(" ").slice(1);
+
 
   if (message.content.toLowerCase() === prefix + 'ping') {
     embed.setColor("BLUE");
@@ -23,6 +25,12 @@ bot.on('message', message => {
     embed.setColor('#7CFC00')
     embed.setDescription('')
     message.channel.send({embed});
+  }
+  if(message.content.toLowerCase().startsWith(prefix + 'general announcement')) {
+    embed.setAuthor(`Announcement`,message.guild.iconURL)
+    embed.setColor('#ed1c1c')
+    embed.setDescription(`${args}`)
+    bot.channels.get(`391052574842945548`).send({embed})
   }
   
 });
